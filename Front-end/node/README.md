@@ -1,0 +1,18 @@
+# Node
+
+## Nodejs开发服务器
+架构设计：
+-monorepo架构
+-分层
+ - 请求、响应（controller_
+ - 服务核心层（service, IO , 文件， 身份鉴权，邮件服务...）
+ - 消息机制（kafka、【Flink】、Clickhouse）
+ - 缓存（内存、redis）
+ - 数据持久层化（mysql, mongoDB, postgresql）矢量数据库 ES 非关系 关系 内存 自定义字段类型 js 函数存储过程支持
+ - 数据中台，数仓，大数据 hadoop hive clickhouse达梦
+ - 结构设计
+    松散，ioc,aop
+    思想，函数式编程，响应式编程rxjs
+
+## node基础服务
+需要用到的模块，http,net 
