@@ -28,3 +28,51 @@
 
  buffer
  stream
+
+
+
+ express简化http开发
+
+
+ ## 一个好的服务端架构体系，需要包含哪些模块和结构？
+
+1.网络层
+    - http
+    - ws
+    - tcp
+2.中间件
+    - koa、express、axios 
+    - cookie
+    - cors, 跨域
+    - body, body-parse  
+    - log
+    - compression, 压缩
+3.缓存
+ - http 缓存， 强缓存，协商缓存，策略缓存
+ - redis
+4.数据库层
+ - postgresql,pg
+ - clickhouse
+ - tiDB
+ - orm,dao,dto
+ - 连接池
+ - 事务
+ - 存储过程
+5.安全
+ - 身份认证（学问auth2.0）注册登录 cookie、 jwt 、 双 token+cookie、OAuth2
+ - 单点登录 oss 
+ - 数据安全
+ - ps: 一切的 spa 应用别给我谈安全 ssr
+6.设计模式
+    - mvc架构 
+    - 微服务
+    - 中间件架构
+7.其他
+ - 消息队列，kafka、rabbitMQ
+ - 任务队列，cron,schedule
+
+8.性能优化
+    - 数据库分库分表，负载均衡
+    - cluster worker child-process
+
+## 
