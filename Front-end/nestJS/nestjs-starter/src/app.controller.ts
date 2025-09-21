@@ -13,10 +13,6 @@ export class AppController {
   @Get('info')
   getInfo(){
     // 控制器 只负责请求处理转发，不负责具体业务逻辑
-    return {
-      name: "nestjs-starter",
-      version: "1.0.0",
-      description: "A starter template for NestJS applications",
-    }
+    return this.appService.getInfo();
   }
 }
