@@ -1,0 +1,13 @@
+{
+  "name": "ws-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ws-server.js",
+  "scripts": {
+    "dev": "nodemon ws-server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}

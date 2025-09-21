@@ -16,3 +16,15 @@
 
 ## node基础服务
 需要用到的模块，http,net 
+
+
+## node http 服务协议升级 （ws）
+
+数据实时同步：
+ 暴力解法；轮询 request interval
+ 方案 技术点 将就；ws 层次 tcp/ip 哪一层呢？
+ sse    
+
+
+ buffer
+ stream
