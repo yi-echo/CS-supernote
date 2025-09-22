@@ -11,7 +11,7 @@ export class AppController {
   }
 
   @Get('info')
-  getInfo(){
+  getInfo(): any {
     // 控制器 只负责请求处理转发，不负责具体业务逻辑
     return this.appService.getInfo();
   }
