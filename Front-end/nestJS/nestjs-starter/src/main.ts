@@ -6,5 +6,10 @@ async function bootstrap() {
   app.setGlobalPrefix('api/v1'); // 全局路由前缀
   await app.listen(process.env.PORT ?? 3000);
   // app.use(new (AppModule as any).LoggerMiddleware().use);
+
+   if (module.hot) {
+    module.hot.accept();
+    module.hot.dispose(() => app.close());
+  }
 }
 bootstrap();

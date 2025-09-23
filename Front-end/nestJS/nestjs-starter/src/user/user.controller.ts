@@ -1,7 +1,11 @@
-import { Controller,Get } from '@nestjs/common';
+import { Controller,Get,Post } from '@nestjs/common';
+import { UserService } from './user.service';
 
 @Controller('user')
 export class UserController {
+
+    constructor(private userService:UserService) {}
+
     @Get()
     getUser(): string {
         return 'This action returns all users';
@@ -9,14 +13,11 @@ export class UserController {
 
     @Get('profile')
     getProfile(): any {
-        return {
-            code: 200,
-            data: {
-                name: 'John Doe',
-                age: 30,
-                email: '',
-            },
-            message: 'Profile fetched successfully',
-        };
+        return this.userService.getUserProfile();
+    }
+
+    @Post()
+    createUser(): string {
+        return 'This action adds a new user';
     }
 }
