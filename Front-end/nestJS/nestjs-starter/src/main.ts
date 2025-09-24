@@ -7,8 +7,9 @@ async function bootstrap() {
   await app.listen(process.env.PORT ?? 3000);
   // app.use(new (AppModule as any).LoggerMiddleware().use);
 
-   if (module.hot) {
+  if (module.hot) {
     module.hot.accept();
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     module.hot.dispose(() => app.close());
   }
 }
