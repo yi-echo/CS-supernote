@@ -1,0 +1,38 @@
+db:
+  mysql:
+    host: localhost
+    port: 330622121
+    username: root
+    password: password
+    database: test_db
+  redis:
+    host: localhost
+    port: 6379
+    password: redis_password
+server:
+  port: 3000
+  host: localhost
+  globalPrefix: api
+  timeout: 5000
+  bodyLimit: 1mb
+  cors:
+    enabled: true
+    origin: '*'
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE'
+    credentials: true
+    preflightContinue: false
+    optionsSuccessStatus: 204
+logging:
+  level: debug
+  format: combined
+  file: logs/app.log
+  maxSize: 10m
+  maxFiles: 14d
+  console: true
+jwt:
+  secret: your_jwt_secret
+  expiresIn: 3600s
+  refreshSecret: your_jwt_refresh_secret
+  refreshExpiresIn: 7d
+swagger:
+  enabled: true

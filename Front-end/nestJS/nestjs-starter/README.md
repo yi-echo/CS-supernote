@@ -151,3 +151,13 @@ Web 服务（NestJS HTTP）
 
 由简入繁，先实现 接口 CRUD + 登录认证 + 权限控制，再逐步扩展。
 NestJS 提供良好的分层架构，结合 AOP/DI 思想，可以快速构建高可维护、可扩展的后端项目。
+
+
+dotenv
+js-yaml
+lodash
+config / nestjs/config
+joi
+
+
+docker:https://hub.docker.com/_/mysql
