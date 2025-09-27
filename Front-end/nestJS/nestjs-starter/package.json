@@ -17,15 +17,23 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "generate:models": "typeorm-model-generator -h 127.0.0.1 -p 3306 -d user -u root -x user -e mysql -o ./src/entites"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",
+    "@nestjs/typeorm": "^11.0.0",
+    "dotenv": "^17.2.2",
+    "joi": "^18.0.1",
+    "js-yaml": "^4.1.0",
+    "lodash": "^4.17.21",
+    "mysql2": "^3.15.1",
     "reflect-metadata": "^0.2.2",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "typeorm": "^0.3.27"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
@@ -54,6 +62,7 @@
     "ts-loader": "^9.5.2",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
+    "typeorm-model-generator": "^0.4.6",
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.20.0",
     "webpack": "^5.101.3",

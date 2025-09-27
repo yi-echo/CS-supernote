@@ -1,3 +1,5 @@
+version: '3.8' 
+
 services:
   db:
     image: mysql:9.3
@@ -9,6 +11,8 @@ services:
       MYSQL_PASSWORD: user     # 可选
     volumes:
       - ./mysql_data:/var/lib/mysql  # 本地挂载，避免匿名卷
+    ports:
+      - 3307:3306
 
   adminer:
     image: adminer

@@ -3,10 +3,16 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LoggerMiddleware } from './common/middlewares/http-log.middleware';
 import { UserModule } from './user/user.module';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 // import { configuration } from './configuration';
 import * as dotenv from 'dotenv';
 import * as joi from 'joi';
+import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { ConfigEnum } from './enum/config.enum';
+import { User } from './user/user.entites';
+import { Profile } from './user/profiles.entites';
+import { Logs } from './logs/logs.entites';
+import { Roles } from './roles/roles.entites';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -24,7 +30,37 @@ import * as joi from 'joi';
         DATABASE_USERNAME: joi.string().required(),
         DATABASE_PASSWORD: joi.string().required(),
         DATABASE_NAME: joi.string().required(),
+        DB_SYNCHRONIZE: joi.boolean().default(false),
       }),
+    }),
+    // TypeOrmModule.forRoot({
+    //   type: 'mysql',
+    //   host: process.env.DATABASE_HOST,
+    //   port: parseInt(process.env.DATABASE_PORT as string, 10) || 3306,
+    //   username: process.env.DATABASE_USERNAME,
+    //   password: process.env.DATABASE_PASSWORD,
+    //   database: process.env.DATABASE_NAME,
+    //   entities: [], // 实体类
+    //   autoLoadEntities: true, // 自动加载实体
+    //   synchronize: true, // 是否自动同步实体到数据库，初始化的时候，生产环境建议关闭
+    //   logging: ['error'], // 是否打印日志
+    // }),
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) =>
+        ({
+          type: configService.get(ConfigEnum.DATABASE_TYPE),
+          host: configService.get<string>(ConfigEnum.DATABASE_HOST),
+          port: configService.get<number>(ConfigEnum.DATABASE_PORT || 3307),
+          username: configService.get<string>(ConfigEnum.DATABASE_USERNAME),
+          password: configService.get<string>(ConfigEnum.DATABASE_PASSWORD),
+          database: configService.get<string>(ConfigEnum.DATABASE_NAME),
+          entities: [User, Profile, Logs, Roles], // 实体类
+          autoLoadEntities: true, // 自动加载实体
+          synchronize: configService.get<boolean>(ConfigEnum.DB_SYNCHRONIZE), // 是否自动同步实体到数据库，初始化的时候，生产环境建议关闭
+          logging: ['error'], // 是否打印日志
+        }) as TypeOrmModuleOptions,
     }),
     UserModule,
   ],

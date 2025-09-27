@@ -156,8 +156,22 @@ NestJS 提供良好的分层架构，结合 AOP/DI 思想，可以快速构建�
 dotenv
 js-yaml
 lodash
-config / nestjs/config
+config / nestjs/config. 环境配置
 joi
 
-
+<!-- docker容器链接数据库 -->
 docker:https://hub.docker.com/_/mysql
+：adminer
+：mysql
+
+
+sql:
+ ORM是什么？https://typeorm.io/docs/getting-started/
+ 集成TypeOrm typeorm-cli. / knex. prisma. sequelize. typeorm
+ mongodb&mongose
+ <!-- https://open.yesapi.cn/list.html -->
+typeorm-model-generator
+
+需求分析 逻辑设计 数据库创建 
+
+日志：
