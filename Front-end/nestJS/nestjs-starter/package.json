@@ -18,7 +18,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "generate:models": "typeorm-model-generator -h 127.0.0.1 -p 3306 -d user -u root -x user -e mysql -o ./src/entites"
+    "generate:models": "typeorm-model-generator -h 127.0.0.1 -p 3306 -d users -u root -x  -e mysql -o ./src/entites"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
