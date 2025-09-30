@@ -6,9 +6,9 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: Cy200619...
-      MYSQL_DATABASE: user        # 可选，初始化时自动建库
-      MYSQL_USER: user            # 可选，初始化时建用户
-      MYSQL_PASSWORD: user     # 可选
+      MYSQL_DATABASE: users        # 可选，初始化时自动建库
+      MYSQL_USER: root            # 可选，初始化时建用户
+      MYSQL_PASSWORD: Cy200619...     # 可选
     volumes:
       - ./mysql_data:/var/lib/mysql  # 本地挂载，避免匿名卷
     ports:

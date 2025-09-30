@@ -59,6 +59,7 @@ import { Roles } from './roles/roles.entites';
           entities: [User, Profile, Logs, Roles], // 实体类
           autoLoadEntities: true, // 自动加载实体
           synchronize: configService.get<boolean>(ConfigEnum.DB_SYNCHRONIZE), // 是否自动同步实体到数据库，初始化的时候，生产环境建议关闭
+          // synchronize: false,
           logging: ['error'], // 是否打印日志
         }) as TypeOrmModuleOptions,
     }),

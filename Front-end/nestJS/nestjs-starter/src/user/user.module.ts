@@ -7,6 +7,6 @@ import { UserService } from './user.service';
   //   isGlobal: true, // Make ConfigModule global
   // })],
   controllers: [UserController],
-  providers: [UserService]
+  providers: [UserService],
 })
 export class UserModule {}
