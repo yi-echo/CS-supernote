@@ -29,4 +29,15 @@ export class UserService {
   remove(id: number) {
     return this.userRepostory.delete(id);
   }
+
+  findUseProfile(id: number) {
+    return this.userRepostory.findOne({
+      where: {
+        id,
+      },
+      relations: {
+        profile: true,
+      },
+    });
+  }
 }

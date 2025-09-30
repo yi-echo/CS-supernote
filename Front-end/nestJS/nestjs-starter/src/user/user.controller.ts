@@ -19,8 +19,8 @@ export class UserController {
   @Post()
   ceaterUser() {
     const user = {
-      username: 'chen',
-      password: '123456',
+      username: 'che213n',
+      password: '1234321356',
     } as User;
     return this.userService.create(user);
   }
@@ -34,9 +34,9 @@ export class UserController {
     return 'This action returns all users';
   }
 
-  @Get('profile')
+  @Get('/profile')
   getProfile(): any {
-    // return this.userService.getUserProfile();
+    return this.userService.findUseProfile(2);
   }
 
   @Post()
