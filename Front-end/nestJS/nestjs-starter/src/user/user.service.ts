@@ -2,11 +2,13 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './user.entites';
+import { Logs } from 'src/logs/logs.entites';
 
 @Injectable()
 export class UserService {
   constructor(
     @InjectRepository(User) private readonly userRepostory: Repository<User>,
+    @InjectRepository(Logs) private readonly logsRepostory: Repository<Logs>,
   ) {}
 
   findAll() {
@@ -15,6 +17,10 @@ export class UserService {
 
   find(username: string) {
     return this.userRepostory.findOne({ where: { username } });
+  }
+
+  findOne(id: number) {
+    return this.userRepostory.findOne({ where: { id } });
   }
 
   async create(user: User) {
@@ -38,6 +44,13 @@ export class UserService {
       relations: {
         profile: true,
       },
+    });
+  }
+
+  async findUserLogs(id: number) {
+    return this.logsRepostory.find({
+      where: { user: { id } }, // 直接用 id 过滤
+      relations: { user: true },
     });
   }
 }

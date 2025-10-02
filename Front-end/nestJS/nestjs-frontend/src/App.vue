@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import '../src/styles/styles.scss'
+import "../src/styles/styles.scss";
 </script>
 
 <template>
-  <RouterView></RouterView>
+  <div id="page-top">
+    <RouterView></RouterView>
+  </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

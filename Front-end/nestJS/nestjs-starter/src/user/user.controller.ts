@@ -19,8 +19,8 @@ export class UserController {
   @Post()
   ceaterUser() {
     const user = {
-      username: 'che213n',
-      password: '1234321356',
+      username: 'che2132133n',
+      password: '12343321321356',
     } as User;
     return this.userService.create(user);
   }
@@ -39,8 +39,8 @@ export class UserController {
     return this.userService.findUseProfile(2);
   }
 
-  @Post()
-  createUser(): string {
-    return 'This action adds a new user';
+  @Get('/logs')
+  getUserLogs(): any {
+    return this.userService.findUserLogs(2);
   }
 }

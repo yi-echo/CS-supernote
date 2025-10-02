@@ -10,7 +10,7 @@ import {
 @Entity()
 export class Logs {
   @PrimaryGeneratedColumn()
-  userId: number;
+  id: number;
 
   @Column()
   path: string;

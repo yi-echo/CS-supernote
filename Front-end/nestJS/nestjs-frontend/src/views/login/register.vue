@@ -9,52 +9,91 @@ test();
 </script>
 
 <template>
-  <div
-    class="container d-flex justify-content-center align-items-center vh-100"
-  >
-    <div class="col-4">
-      <form class="border shadow-sm rounded p-4">
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label"
-            >Email address</label
-          >
-          <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            required
-          />
-          <div class="invalid-feedback">Please choose a username.</div>
+  <div class="container d-flex justify-content-center align-items-center vh-100">
+      <div class="card-body p-0">
+        <!-- Nested Row within Card Body -->
+        <div class="row">
+          <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+          <div class="col-lg-7">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+              </div>
+              <form class="user">
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input
+                      type="text"
+                      class="form-control form-control-user"
+                      id="exampleFirstName"
+                      placeholder="First Name"
+                    />
+                  </div>
+                  <div class="col-sm-6">
+                    <input
+                      type="text"
+                      class="form-control form-control-user"
+                      id="exampleLastName"
+                      placeholder="Last Name"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    class="form-control form-control-user"
+                    id="exampleInputEmail"
+                    placeholder="Email Address"
+                  />
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input
+                      type="password"
+                      class="form-control form-control-user"
+                      id="exampleInputPassword"
+                      placeholder="Password"
+                    />
+                  </div>
+                  <div class="col-sm-6">
+                    <input
+                      type="password"
+                      class="form-control form-control-user"
+                      id="exampleRepeatPassword"
+                      placeholder="Repeat Password"
+                    />
+                  </div>
+                </div>
+                <a href="login.html" class="btn btn-primary btn-user btn-block">
+                  Register Account
+                </a>
+                <hr />
+                <a href="index.html" class="btn btn-google btn-user btn-block">
+                  <i class="fab fa-google fa-fw"></i> Register with Google
+                </a>
+                <a
+                  href="index.html"
+                  class="btn btn-facebook btn-user btn-block"
+                >
+                  <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+                </a>
+              </form>
+              <hr />
+              <div class="text-center">
+                <a class="small" href="forgot-password.html"
+                  >Forgot Password?</a
+                >
+              </div>
+              <div class="text-center">
+                <router-link to="/login" class="small">Already have an account? Login!</router-link>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
-          />
-        </div>
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-          <label class="form-check-label" for="exampleCheck1"
-            >Check me out</label
-          >
-        </div>
-        <div class="d-flex flex-column align-items-center px-1">
-          <button type="submit" class="btn">sign up</button>
-          <router-link
-            to="/"
-            class="border rounded w-100 text-decoration-none text-center"
-          >
-            <button type="submit" class="btn btn-primary w-100 mb-2 text-light">
-              sign in
-            </button>
-          </router-link>
-        </div>
-      </form>
-    </div>
+      </div>
   </div>
 </template>
 
-<style></style>
+<style>
+@import url("@/assets/css/sb-admin-2.min.css");
+</style>
